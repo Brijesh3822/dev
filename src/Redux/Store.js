@@ -1,6 +1,30 @@
-import { createStore, compose } from "redux";
-import { reducer } from "./Reducer";
+import { createStore, compose, applyMiddleware, legacy_createStore, combineReducers } from "redux";
+import taskReducer from "./Reduser";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export const store = createStore(reducer, {}, composeEnhancers());
+
+// export const store = createStore(taskReducer, {}, composeEnhancers());
+// import {
+//   compose,
+//   applyMiddleware,
+//   combineReducers,
+//   legacy_createStore,
+// } from "redux";
+
+// import { thunk } from "redux-thunk";
+// import { Product } from "./Product";
+
+let combine = combineReducers({
+  items: taskReducer,
+});
+
+// export const store =createStore(reducer)
+
+const composeEnhancers =
+  typeof window === "object" && window.REDUX_DEVTOOLS_EXTENSION_COMPOSE
+    ? window.REDUX_DEVTOOLS_EXTENSION_COMPOSE({})
+    : compose;
+export const store = legacy_createStore(
+  combine,
+  composeEnhancers()
+);

@@ -1,4 +1,5 @@
-export const ADD_TASK = "ADD_TASK";
-export const UPDATE_TASK_TITLE = "UPDATE_TASK_TITLE";
-export const UPDATE_TASK_DESCRIPTION = "UPDATE_TASK_DESCRIPTION";
-export const TOTAL_PRICE="TOTAL_PRICE";
+export const ADD_CART = "ADD_CART";
+export const INCREMENT_QTY = "INCREMENT_QTY";
+export const DECREMENT_QTY = "DECREMENT_QTY";
+export const REMOVE_QTY = "REMOVE_QTY";
+// export const TOTAL_PRICE = "TOTAL_PRICE";

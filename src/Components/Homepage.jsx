@@ -18,10 +18,13 @@ import { FaRegStar } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-
 import { FaInstagram } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { ADD_CART } from "../Redux/ActionType";
+import { addCart } from "../Redux/Action";
+import Footer from "./Footer";
 
 function Homepage() {
   const data = [
@@ -67,6 +70,8 @@ function Homepage() {
     },
   ];
 
+  const dispatch = useDispatch();
+
   const length = data.length;
   // console.log(length);
   // const index = {
@@ -106,48 +111,56 @@ function Homepage() {
 
   const product = [
     {
+      id: "1",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product1.png",
       name: "stylish grey chair",
       price: "150.00",
       Categories: "All Collection",
     },
     {
+      id: "2",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product2.png",
       name: "Chair pillow",
       price: "190.00",
       Categories: "All Collection",
     },
     {
+      id: "3",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product3.png",
       name: "seater gray sofa",
       price: "300.00",
       Categories: "All Collection",
     },
     {
+      id: "4",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product4.png",
       name: "wooden chair",
       price: "129.00",
       Categories: "All Collection",
     },
     {
+      id: "5",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product5.png",
       name: "Alexander sofa",
       price: "150.00",
       Categories: "All Collection",
     },
     {
+      id: "6",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product6.png",
       name: "stylish grey chair",
       price: "150.00",
       Categories: "All Collection",
     },
     {
+      id: "7",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product7.png",
       name: "chair nobody armchair",
       price: "80.00",
       Categories: "All Collection",
     },
     {
+      id: "8",
       Img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/product8.png",
       name: "realistic sofa ",
       price: "49.00",
@@ -236,31 +249,37 @@ function Homepage() {
 
   const bestseller = [
     {
+      id: "1",
       img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/fs-01.png",
       name: "Stylish Grey Chair",
       price: "66.00 ",
     },
     {
+      id: "2",
       img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/fs-02.png",
       name: "Chair Pillow",
       price: "66.00 ",
     },
     {
+      id: "3",
       img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/fs-03.png",
       name: "Alexander roll ..",
       price: " 66.00",
     },
     {
+      id: "4",
       img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/fs-04.png",
       name: "Wooden Chair",
       price: "66.00",
     },
     {
+      id: "5",
       img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/fs-05.png",
       name: "Chair Pillow",
       price: "66.00 ",
     },
     {
+      id: "6",
       img: "https://gramentheme.com/html/addina/assets/imgs/furniture/product/fs-06.png",
       name: "seater gray sofa",
       price: "66.00 ",
@@ -274,6 +293,11 @@ function Homepage() {
   //   xl: "80em", // ~1280px
   //   "2xl": "96em", // ~1536px
   // };
+
+  function HandelAdd(data) {
+    console.log(data);
+    dispatch(addCart({ type: ADD_CART,  ...data, qty: 1  }));
+  }
   return (
     <div>
       <Header />
@@ -310,7 +334,7 @@ function Homepage() {
             <Text>Your Home</Text>
             <Text>Aesthetics</Text>
           </Box>
-          <Box
+          <Box 
             w={{ xl: "450px", md: "450px", base: "auto" }}
             mt={"40px"}
             color={"#636363"}
@@ -654,26 +678,45 @@ function Homepage() {
                       gap={"10px"}
                       position={"absolute"}
                       top={{ xl: "280", md: "240", base: "220" }}
-                      left={{ xl: "60px", md: "40px", base: "50px" }}
+                      left={{ xl: "40px", md: "40px", base: "50px" }}
                       right={"10px"}
                       zIndex={"-1"}
                       // border={"2px solid red"}
                     >
-                      <Box borderRadius={"50%"} bgColor={"#B28B5E"}>
-                        <Box m={"8px"}>
-                          <IoCartOutline fontSize={"30px"} color={"white"} />
-                        </Box>
-                      </Box>
-                      <Box borderRadius={"50%"} bgColor={"#B28B5E"}>
-                        <Box m={"9px"}>
-                          <GrView fontSize={"30px"} color={"white"} />
-                        </Box>
-                      </Box>
-                      <Box borderRadius={"50%"} bgColor={"#B28B5E"}>
-                        <Box m={"9px"}>
-                          <GoHeart fontSize={"30px"} color={"white"} />
-                        </Box>
-                      </Box>
+                      <Button
+                        w={"50px"}
+                        h={"50px"}
+                        borderRadius={"50%"}
+                        bgColor={"#B28B5E"}
+                        _hover={{ bgColor: "#B28B5E" }}
+                        onClick={() => HandelAdd(data)}
+                      >
+                        {/* <Box m={"8px"}> */}
+                        <IoCartOutline fontSize={"30px"} color={"white"} />
+                        {/* </Box> */}
+                      </Button>
+                      <Button
+                        w={"50px"}
+                        h={"50px"}
+                        borderRadius={"50%"}
+                        bgColor={"#B28B5E"}
+                        _hover={{ bgColor: "#B28B5E" }}
+                      >
+                        {/* <Box m={"9px"}> */}
+                        <GrView fontSize={"30px"} color={"white"} />
+                        {/* </Box> */}
+                      </Button>
+                      <Button
+                        w={"50px"}
+                        h={"50px"}
+                        borderRadius={"50%"}
+                        bgColor={"#B28B5E"}
+                        _hover={{ bgColor: "#B28B5E" }}
+                      >
+                        {/* <Box m={"9px"}> */}
+                        <GoHeart fontSize={"30px"} color={"white"} />
+                        {/* </Box> */}
+                      </Button>
                     </Box>
                   </Box>
 
@@ -955,21 +998,40 @@ function Homepage() {
                         zIndex={"-1"}
                         _hover={{ transition: "all 1s" }}
                       >
-                        <Box borderRadius={"50%"} bgColor={"#B28B5E"}>
-                          <Box m={"8px"}>
-                            <IoCartOutline fontSize={"30px"} color={"white"} />
-                          </Box>
-                        </Box>
-                        <Box borderRadius={"50%"} bgColor={"#B28B5E"}>
-                          <Box m={"9px"}>
-                            <GrView fontSize={"30px"} color={"white"} />
-                          </Box>
-                        </Box>
-                        <Box borderRadius={"50%"} bgColor={"#B28B5E"}>
-                          <Box m={"9px"}>
-                            <GoHeart fontSize={"30px"} color={"white"} />
-                          </Box>
-                        </Box>
+                        <Button
+                          w={"50px"}
+                          h={"50px"}
+                          borderRadius={"50%"}
+                          bgColor={"#B28B5E"}
+                          _hover={{ bgColor: "#B28B5E" }}
+                          onClick={() => HandelAdd(data)}
+                        >
+                          {/* <Box m={"8px"}> */}
+                          <IoCartOutline fontSize={"60px"} color={"white"} />
+                          {/* </Box> */}
+                        </Button>
+                        <Button
+                          w={"50px"}
+                          h={"50px"}
+                          borderRadius={"50%"}
+                          bgColor={"#B28B5E"}
+                          _hover={{ bgColor: "#B28B5E" }}
+                        >
+                          {/* <Box m={"9px"}> */}
+                          <GrView fontSize={"30px"} color={"white"} />
+                          {/* </Box> */}
+                        </Button>
+                        <Button
+                          w={"50px"}
+                          h={"50px"}
+                          borderRadius={"50%"}
+                          bgColor={"#B28B5E"}
+                          _hover={{ bgColor: "#B28B5E" }}
+                        >
+                          {/* <Box m={"9px"}> */}
+                          <GoHeart fontSize={"30px"} color={"white"} />
+                          {/* </Box> */}
+                        </Button>
                       </Box>
                     </Box>
 
@@ -1275,7 +1337,7 @@ function Homepage() {
                 gridTemplateColumns={{
                   xl: "45% 45%",
                   md: "48% 49%",
-                  base: "48% 49%",
+                  base: "45% 49%",
                 }}
                 gap={"20px"}
               >
@@ -1450,7 +1512,7 @@ function Homepage() {
         </Box>
       </Box>
 
-      <Box h={"600px"} p={{ xl: "100px 200px", md: "50px 20px" }}>
+      <Box h={{xl:"600px",md:"600px",base:"auto"}} p={{ xl: "100px 200px", md: "50px 20px" }}>
         <Box
           display={"grid"}
           gridTemplateColumns={{ xl: "30% 30% 30%", md: "45% 45%" }}
@@ -1543,260 +1605,7 @@ function Homepage() {
         </Box>
       </Box>
 
-      <Box
-
-      // h={"500px"}
-      // bgColor={"#191919"}
-      // p={"100px 300px"}
-      // display={"grid"}
-      // gridTemplateColumns={"25% 25% 25% 25%"}
-      // gap={"40px"}
-      >
-        <Box
-          bgColor={"#191919"}
-          p={{ xl: "100px 300px", md: "50px 50px", base: "50px 50px" }}
-          display={"grid"}
-          gridTemplateColumns={{ xl: "25% 25% 25% 25%", md: "50% 50%" }}
-          gap={"40px"}
-          mt={{ xl: "0px", md: "400px", base: "940px" }}
-        >
-          <Box>
-            <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo-light.svg" />
-            <Text color={"gray"} mt={"10px"} fontWeight={"bold"}>
-              It helps designers plan out where the content will sit, the
-              content to be written and approved.
-            </Text>
-
-            <Box
-              display={"grid"}
-              gridTemplateColumns={" 20% 20% 20% 20%"}
-              mt={"40px"}
-              gap={"10px"}
-            >
-              <Box
-                w={"40px"}
-                h={"40px"}
-                borderRadius={"50%"}
-                bgColor={"white"}
-                fontSize={"20px"}
-                p={"10px"}
-                transition={"all 1s"}
-                _hover={{
-                  bgColor: "#B28B5E",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                <FaFacebookF />
-              </Box>
-              <Box
-                w={"40px"}
-                h={"40px"}
-                borderRadius={"50%"}
-                bgColor={"white"}
-                fontSize={"20px"}
-                p={"10px"}
-                transition={"all 1s"}
-                _hover={{
-                  bgColor: "#B28B5E",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                <FaTwitter />
-              </Box>
-              <Box
-                w={"40px"}
-                h={"40px"}
-                borderRadius={"50%"}
-                bgColor={"white"}
-                fontSize={"20px"}
-                p={"10px"}
-                transition={"all 1s"}
-                _hover={{
-                  bgColor: "#B28B5E",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                <FaLinkedinIn />
-              </Box>
-              <Box
-                w={"40px"}
-                h={"40px"}
-                borderRadius={"50%"}
-                bgColor={"white"}
-                fontSize={"20px"}
-                p={"10px"}
-                transition={"all 1s"}
-                _hover={{
-                  bgColor: "#B28B5E",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                <FaInstagram />
-              </Box>
-            </Box>
-          </Box>
-          <Box>
-            <Text color={"white"} fontSize={"25px"} fontWeight={"bold"}>
-              Services
-            </Text>
-            <Box mt={"20px"} lineHeight={"2"}>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Log In
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Wishlist
-              </Text>
-              <Text
-                color={"#BABABA "}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Return Policy
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Privacy policy
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Shopping FAQs
-              </Text>
-            </Box>
-          </Box>
-
-          <Box>
-            <Text color={"white"} fontSize={"25px"} fontWeight={"bold"}>
-              Company
-            </Text>
-            <Box mt={"20px"} lineHeight={"2"}>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Home
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                About us
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Pages
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Blog
-              </Text>
-              <Text
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                fontSize={"20px"}
-                _hover={{ color: "white", cursor: "pointer" }}
-              >
-                Contact us
-              </Text>
-            </Box>
-          </Box>
-          <Box>
-            <Text color={"white"} fontSize={"25px"} fontWeight={"bold"}>
-              Contact
-            </Text>
-            <Text color={"#555555"} mt={"20px"} fontWeight={"bold"}>
-              4517 Washington Ave. Manchester, Kentucky 39495
-            </Text>
-
-            <Box
-              display={"flex"}
-              flexDirection={"row"}
-              gap={"20px"}
-              mt={"20px"}
-            >
-              <Box
-                h={"50px"}
-                w={"50px"}
-                borderRadius={"50%"}
-                bgColor={"#B28B5E"}
-                fontSize={"25px"}
-                color={"white"}
-                p={"12px"}
-              >
-                <FaMapMarkerAlt />
-              </Box>
-              <Box
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                _hover={{ color: "#B28B5E", cursor: "pointer" }}
-              >
-                711-2880 Nulla St.
-              </Box>
-            </Box>
-
-            <Box
-              display={"flex"}
-              flexDirection={"row"}
-              gap={"20px"}
-              mt={"20px"}
-            >
-              <Box
-                h={{ xl: "50px" }}
-                w={"50px"}
-                borderRadius={"50%"}
-                bgColor={"#B28B5E"}
-                fontSize={"25px"}
-                color={"white"}
-                p={"12px"}
-              >
-                <FaPhone />
-              </Box>
-              <Box
-                color={"#BABABA"}
-                fontWeight={"bold"}
-                _hover={{ color: "#B28B5E", cursor: "pointer" }}
-              >
-                +964 742 44 763
-                <Text color={"#555555"}>Mon - Sat: 9 AM - 5 PM</Text>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+        <Footer/>
     </div>
   );
 }

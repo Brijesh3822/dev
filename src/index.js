@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./Redux/Store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const breakpoints = {
@@ -21,7 +24,11 @@ const theme = extendTheme({ breakpoints });
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
     </ChakraProvider>
   </React.StrictMode>
 );

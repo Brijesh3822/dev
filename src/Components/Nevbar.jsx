@@ -25,6 +25,7 @@ import { IoMenu } from "react-icons/io5";
 import { LuMapPin } from "react-icons/lu";
 import { MdOutlinePhone } from "react-icons/md";
 import { CgMail } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 function Nevbar() {
   // const breakpoints = {
@@ -54,7 +55,9 @@ function Nevbar() {
         p={{ xl: "0px 0px", md: " 0px 20px" }}
       >
         <Box>
-          <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo.svg" />
+          <Link to={"/"}>
+            <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo.svg" />{" "}
+          </Link>
         </Box>
         <Box
           display={{ xl: "grid", md: "none", base: "none" }}
@@ -328,7 +331,18 @@ function Nevbar() {
           gap={"40px"}
         >
           <GoHeart />
-          <IoCartOutline />
+
+          <Link to={"/addcart"}>
+            <Button
+              w={"60px"}
+              bg={"transparent"}
+              fontSize={"60px"}
+              _hover={{ bg: "transparent" }}
+            >
+              <IoCartOutline />
+            </Button>
+          </Link>
+
           {/* <IoMenu /> */}
         </Box>
 
