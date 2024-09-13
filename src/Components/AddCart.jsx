@@ -7,13 +7,13 @@ import { IoBagCheck } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
 import { DECREMENT_QTY, INCREMENT_QTY, REMOVE_QTY } from "../Redux/ActionType";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
-function AddCart() {
+function AddCart({ total, setTotal }) {
   const { cartdata } = useSelector((store) => store.items);
   console.log(cartdata);
 
-  const [total, setTotal] = useState();
+  // const [total, setTotal] = useState();
   useEffect(() => {
     function handelTotal() {
       const total = cartdata.reduce((pr, cr) => {
@@ -35,6 +35,8 @@ function AddCart() {
       dispatch({ type: DECREMENT_QTY, payload: el });
     }
   }
+
+  const navigate = useNavigate();
   // const removeQty = (data) => {
   //   if (data.qty <= 0) {
   //     dispatch({ type: REMOVE_CART, payload: data.id });
@@ -72,7 +74,7 @@ function AddCart() {
       <Box
         display={{ xl: "grid", md: "grid", base: "flex" }}
         flexDirection={{ xl: "none", md: "none", base: "column" }}
-        gridTemplateColumns={{ xl: "58% 40%", }}
+        gridTemplateColumns={{ xl: "58% 40%" }}
         gap={"20px"}
         p={"10px"}
       >
@@ -192,8 +194,11 @@ function AddCart() {
             </Box>
           </Box>
 
-          <Link to={"/payment"}>
+          {/* <Link to={"/payment"}> */}
             <Button
+              onClick={() => {
+                navigate("/payment");
+              }}
               w={"100%"}
               display={"flex"}
               flexDirection={"row"}
@@ -204,7 +209,7 @@ function AddCart() {
             >
               <FaLock /> <Text fontSize={"20px"}>CheckOut</Text>
             </Button>
-          </Link>
+          {/* </Link> */}
         </Box>
       </Box>
       <Footer />

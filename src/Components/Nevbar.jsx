@@ -25,7 +25,8 @@ import { IoMenu } from "react-icons/io5";
 import { LuMapPin } from "react-icons/lu";
 import { MdOutlinePhone } from "react-icons/md";
 import { CgMail } from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
 
 function Nevbar() {
   // const breakpoints = {
@@ -39,20 +40,23 @@ function Nevbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
+  const navigate = useNavigate();
+
   return (
     <div>
       <Box
         h={"100px"}
         display={"grid"}
+
         gridTemplateColumns={{
-          xl: "10% 55% 15% 5% 5%",
-          md: "70% 20% 5% ",
-          base: "64% 20% 5%",
+          xl: "10% 55% 15% 10%",
+          md: "70% 30% ",
+          base: "55% 50%",
         }}
         alignItems={"center"}
-        alignContent={"center"}
+        // alignContent={"center"}
         justifyContent={{ xl: "space-around", md: "start" }}
-        p={{ xl: "0px 0px", md: " 0px 20px" }}
+        p={{ xl: "0px 0px", md: " 10px 20px", base: "10px 20px" }}
       >
         <Box>
           <Link to={"/"}>
@@ -325,152 +329,167 @@ function Nevbar() {
           </Button>
         </Box>
         <Box
-          fontSize={"30px"}
+          // fontSize={"60px"}
           display={"flex"}
           flexDirection={"row"}
-          gap={"40px"}
+          alignItems={"center"}
+          gap={"0px"}
         >
-          <GoHeart />
+          <Button
+            onClick={() => {
+              navigate("/signup");
+            }}
+            bg={"transparent"}
+            fontSize={{ xl: "60px", md: "30px", base: "40px" }}
+            _hover={{ bg: "transparent" }}
+          >
+            <FaSignInAlt />
+          </Button>
 
-          <Link to={"/addcart"}>
-            <Button
-              w={"60px"}
-              bg={"transparent"}
-              fontSize={"60px"}
-              _hover={{ bg: "transparent" }}
-            >
-              <IoCartOutline />
-            </Button>
-          </Link>
+          {/* <Link to={"/addcart"}> */}
+          <Button
+            onClick={() => {
+              navigate("/addcart");
+            }}
+            // w={"60px"}
+            bg={"transparent"}
+            fontSize={{ xl: "60px", md: "30px", base: "40px" }}
+            _hover={{ bg: "transparent" }}
+          >
+            <IoCartOutline />
+          </Button>
+          {/* </Link> */}
 
           {/* <IoMenu /> */}
-        </Box>
 
-        <Box>
-          <Button
-            ref={btnRef}
-            colorScheme="teal"
-            onClick={onOpen}
-            bgColor={"transparent"}
-            color={"black"}
-            fontSize={"30px"}
-            _hover={{ bgColor: "white" }}
-          >
-            <IoMenu />
-          </Button>
-          <Drawer
-            isOpen={isOpen}
-            placement="right"
-            onClose={onClose}
-            finalFocusRef={btnRef}
-          >
-            <DrawerOverlay />
-            <DrawerContent bgColor={"#191919"}>
-              <DrawerCloseButton
-                color={"white"}
-                mt={"10px"}
-                borderRadius={"50%"}
-                w={"40px"}
-                h={"40px"}
-                fontSize={"15px"}
-                bgColor={"#B28B5E"}
-              />
-              <DrawerHeader mt={"10px"} borderBottom={"2px solid #252525"}>
-                <Image
+          <Box>
+            <Button
+              ref={btnRef}
+              colorScheme="teal"
+              onClick={onOpen}
+              bgColor={"transparent"}
+              color={"black"}
+              fontSize={"30px"}
+              _hover={{ bgColor: "white" }}
+            >
+              <IoMenu />
+            </Button>
+            <Drawer
+              isOpen={isOpen}
+              placement="right"
+              onClose={onClose}
+              finalFocusRef={btnRef}
+            >
+              <DrawerOverlay />
+              <DrawerContent bgColor={"#191919"}>
+                <DrawerCloseButton
                   color={"white"}
-                  src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo-light.svg"
+                  mt={"10px"}
+                  borderRadius={"50%"}
+                  w={"40px"}
+                  h={"40px"}
+                  fontSize={"15px"}
+                  bgColor={"#B28B5E"}
                 />
-              </DrawerHeader>
+                <DrawerHeader mt={"10px"} borderBottom={"2px solid #252525"}>
+                  <Image
+                    color={"white"}
+                    src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo-light.svg"
+                  />
+                </DrawerHeader>
 
-              <DrawerBody mt={"20px"} lineHeight={"2"}>
-                <Box>
-                  <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
-                    <Text>Home</Text>
-                  </Box>
-                  <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
-                    <Text>About</Text>
-                  </Box>
-                  <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
-                    <Text>Shop</Text>
-                  </Box>
-                  <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
-                    <Text>Pages</Text>
-                  </Box>
-                  <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
-                    <Text>Blog</Text>
-                  </Box>
-                  <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
-                    <Text>Contact</Text>
-                  </Box>
-                </Box>
-                <Box mt={"20px"}>
-                  <Box fontSize={"30px"} color={"white"} fontWeight={"bold"}>
-                    Contact Info
-                  </Box>
-                  <Box display={"flex"} flexDirection={"row"} mt={"20px"}>
-                    <Box
-                      border={"1px solid  #252525"}
-                      w={"40px"}
-                      h={"40px"}
-                      borderRadius={"50%"}
-                      color={"white"}
-                      p={"10.5px"}
-                      transition={"all 1s"}
-                      _hover={{ bgColor: "#B28B5E", border: "none" }}
-                    >
-                      <LuMapPin />
+                <DrawerBody mt={"20px"} lineHeight={"2"}>
+                  <Box>
+                    <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
+                      <Text>Home</Text>
                     </Box>
-                    <Box>
-                      <Text color={"white"} ml={"10px"}>
-                        {" "}
-                        12/A, Mirnada City Tower, NYC
-                      </Text>
+                    <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
+                      <Text>About</Text>
+                    </Box>
+                    <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
+                      <Text>Shop</Text>
+                    </Box>
+                    <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
+                      <Text>Pages</Text>
+                    </Box>
+                    <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
+                      <Text>Blog</Text>
+                    </Box>
+                    <Box color={"white"} fontSize={"20px"} fontWeight={"bold"}>
+                      <Text>Contact</Text>
+                    </Box>
+                    {/* <Box>
+                      <Button>Sign Up</Button>
+                    </Box> */}
+                  </Box>
+                  <Box mt={"20px"}>
+                    <Box fontSize={"30px"} color={"white"} fontWeight={"bold"}>
+                      Contact Info
+                    </Box>
+                    <Box display={"flex"} flexDirection={"row"} mt={"20px"}>
+                      <Box
+                        border={"1px solid  #252525"}
+                        w={"40px"}
+                        h={"40px"}
+                        borderRadius={"50%"}
+                        color={"white"}
+                        p={"10.5px"}
+                        transition={"all 1s"}
+                        _hover={{ bgColor: "#B28B5E", border: "none" }}
+                      >
+                        <LuMapPin />
+                      </Box>
+                      <Box>
+                        <Text color={"white"} ml={"10px"}>
+                          12/A, Mirnada City Tower, NYC
+                        </Text>
+                      </Box>
+                    </Box>
+                    <Box display={"flex"} flexDirection={"row"} mt={"20px"}>
+                      <Box
+                        border={"1px solid  #252525"}
+                        w={"40px"}
+                        h={"40px"}
+                        borderRadius={"50%"}
+                        color={"white"}
+                        p={"10.5px"}
+                        transition={"all 1s"}
+                        _hover={{ bgColor: "#B28B5E", border: "none" }}
+                      >
+                        <MdOutlinePhone />
+                      </Box>
+                      <Box>
+                        <Text color={"white"} ml={"10px"}>
+                          +088889797697
+                        </Text>
+                      </Box>
+                    </Box>
+                    <Box display={"flex"} flexDirection={"row"} mt={"20px"}>
+                      <Box
+                        border={"1px solid  #252525"}
+                        w={"40px"}
+                        h={"40px"}
+                        borderRadius={"50%"}
+                        color={"white"}
+                        p={"10.5px"}
+                        transition={"all 1s"}
+                        _hover={{ bgColor: "#B28B5E", border: "none" }}
+                      >
+                        <CgMail />
+                      </Box>
+                      <Box>
+                        <Text color={"white"} ml={"10px"}>
+                          support@mail.com
+                        </Text>
+                      </Box>
                     </Box>
                   </Box>
-                  <Box display={"flex"} flexDirection={"row"} mt={"20px"}>
-                    <Box
-                      border={"1px solid  #252525"}
-                      w={"40px"}
-                      h={"40px"}
-                      borderRadius={"50%"}
-                      color={"white"}
-                      p={"10.5px"}
-                      transition={"all 1s"}
-                      _hover={{ bgColor: "#B28B5E", border: "none" }}
-                    >
-                      <MdOutlinePhone />
-                    </Box>
-                    <Box>
-                      <Text color={"white"} ml={"10px"}>
-                        +088889797697
-                      </Text>
-                    </Box>
-                  </Box>
-                  <Box display={"flex"} flexDirection={"row"} mt={"20px"}>
-                    <Box
-                      border={"1px solid  #252525"}
-                      w={"40px"}
-                      h={"40px"}
-                      borderRadius={"50%"}
-                      color={"white"}
-                      p={"10.5px"}
-                      transition={"all 1s"}
-                      _hover={{ bgColor: "#B28B5E", border: "none" }}
-                    >
-                      <CgMail />
-                    </Box>
-                    <Box>
-                      <Text color={"white"} ml={"10px"}>
-                        support@mail.com
-                      </Text>
-                    </Box>
-                  </Box>
-                </Box>
-              </DrawerBody>
+                </DrawerBody>
 
-              <DrawerFooter></DrawerFooter>
-            </DrawerContent>
-          </Drawer>
+                <DrawerFooter></DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </Box>
         </Box>
       </Box>
     </div>

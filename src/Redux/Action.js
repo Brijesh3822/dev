@@ -2,7 +2,9 @@ import {
   ADD_CART,
   DECREMENT_QTY,
   INCREMENT_QTY,
+  LOGIN_DATA,
   REMOVE_QTY,
+  SIGNUP_DATA,
   TOTAL_PRICE,
 } from "./ActionType";
 
@@ -39,6 +41,19 @@ export const removeqty = (data) => {
   };
 };
 
+export const signup = (data) => {
+  return {
+    type: SIGNUP_DATA,
+    payload: data,
+  };
+};
+
+export const login = (data) => {
+  return {
+    type: LOGIN_DATA,
+    payload: data,
+  };
+};
 // export const totalPrice = (value) => {
 //   return {
 //     type: TOTAL_PRICE,

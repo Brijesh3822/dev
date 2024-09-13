@@ -1,7 +1,12 @@
-import { createStore, compose, applyMiddleware, legacy_createStore, combineReducers } from "redux";
+import {
+  createStore,
+  compose,
+  applyMiddleware,
+  legacy_createStore,
+  combineReducers,
+} from "redux";
 import taskReducer from "./Reduser";
-
-
+import { signdataReducer } from "./Signdata";
 
 // export const store = createStore(taskReducer, {}, composeEnhancers());
 // import {
@@ -16,6 +21,7 @@ import taskReducer from "./Reduser";
 
 let combine = combineReducers({
   items: taskReducer,
+  User: signdataReducer,
 });
 
 // export const store =createStore(reducer)
@@ -24,7 +30,4 @@ const composeEnhancers =
   typeof window === "object" && window.REDUX_DEVTOOLS_EXTENSION_COMPOSE
     ? window.REDUX_DEVTOOLS_EXTENSION_COMPOSE({})
     : compose;
-export const store = legacy_createStore(
-  combine,
-  composeEnhancers()
-);
+export const store = legacy_createStore(combine, composeEnhancers());

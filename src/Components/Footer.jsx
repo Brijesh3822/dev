@@ -39,7 +39,7 @@ function Footer() {
           display={"grid"}
           gridTemplateColumns={{ xl: "25% 25% 25% 25%", md: "50% 50%" }}
           gap={"40px"}
-          mt={{ xl: "0px", md: "400px", base: "auto" }}
+          mt={{ xl: "0px", md: "0px", base: "auto" }}
         >
           <Box>
             <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo-light.svg" />

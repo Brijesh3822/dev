@@ -3,13 +3,14 @@ import {
   INCREMENT_QTY,
   DECREMENT_QTY,
   REMOVE_QTY,
+  SIGNUP_DATA,
 } from "./ActionType";
 
 const initialState = {
   cartdata: [],
 };
 
-const taskReducer = (state = initialState, { type, payload }) => {
+export const taskReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_CART:
       console.log(payload);
@@ -45,6 +46,7 @@ const taskReducer = (state = initialState, { type, payload }) => {
         ...state,
         cartdata: state.cartdata.filter((e) => e.id !== payload),
       };
+      
     // case REMOVE_QTY:
     //   return {
     //     ...state,

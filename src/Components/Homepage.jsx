@@ -1512,7 +1512,7 @@ function Homepage() {
         </Box>
       </Box>
 
-      <Box h={{xl:"600px",md:"600px",base:"auto"}} p={{ xl: "100px 200px", md: "50px 20px" }}>
+      <Box h={{xl:"600px",md:"auto",base:"auto"}} p={{ xl: "100px 200px", md: "50px 20px" }}>
         <Box
           display={"grid"}
           gridTemplateColumns={{ xl: "30% 30% 30%", md: "45% 45%" }}
