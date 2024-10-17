@@ -47,16 +47,23 @@ function Nevbar() {
       <Box
         h={"100px"}
         display={"grid"}
-
         gridTemplateColumns={{
           xl: "10% 55% 15% 10%",
           md: "70% 30% ",
           base: "55% 50%",
+          basemd: "55% 50%",
+          basesm: "55% 50%",
         }}
         alignItems={"center"}
         // alignContent={"center"}
         justifyContent={{ xl: "space-around", md: "start" }}
-        p={{ xl: "0px 0px", md: " 10px 20px", base: "10px 20px" }}
+        p={{
+          xl: "0px 0px",
+          md: " 10px 20px",
+          base: "10px 20px",
+          basemd: "10px 20px",
+          basesm: "10px 20px",
+        }}
       >
         <Box>
           <Link to={"/"}>
@@ -64,7 +71,13 @@ function Nevbar() {
           </Link>
         </Box>
         <Box
-          display={{ xl: "grid", md: "none", base: "none" }}
+          display={{
+            xl: "grid",
+            md: "none",
+            base: "none",
+            basemd: "none",
+            basesm: "none",
+          }}
           gridTemplateColumns={"10% 10% 10% 10% 10% 10%"}
         >
           <Box>
@@ -302,7 +315,13 @@ function Nevbar() {
           </Box>
         </Box>
         <Box
-          display={{ xl: "flex", md: "none", base: "none" }}
+          display={{
+            xl: "flex",
+            md: "none",
+            base: "none",
+            basemd: "none",
+            basesm: "none",
+          }}
           flexDirection={"row"}
           position={"relative"}
         >
@@ -340,7 +359,13 @@ function Nevbar() {
               navigate("/signup");
             }}
             bg={"transparent"}
-            fontSize={{ xl: "60px", md: "30px", base: "40px" }}
+            fontSize={{
+              xl: "60px",
+              md: "30px",
+              base: "40px",
+              basemd: "40px",
+              basesm: "40px",
+            }}
             _hover={{ bg: "transparent" }}
           >
             <FaSignInAlt />
@@ -353,7 +378,13 @@ function Nevbar() {
             }}
             // w={"60px"}
             bg={"transparent"}
-            fontSize={{ xl: "60px", md: "30px", base: "40px" }}
+            fontSize={{
+              xl: "60px",
+              md: "30px",
+              base: "40px",
+              basemd: "40px",
+              basesm: "40px",
+            }}
             _hover={{ bg: "transparent" }}
           >
             <IoCartOutline />

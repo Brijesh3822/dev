@@ -1,3 +1,4 @@
+import { signup } from "./Action";
 import { LOGIN_DATA, SIGNUP_DATA } from "./ActionType";
 
 const initialState = {
@@ -19,8 +20,7 @@ export const signdataReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         signupdata: payload,
-
-        isLoging: true,
+        isLoging: true, 
       };
     default:
       return state;

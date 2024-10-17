@@ -11,12 +11,13 @@ import { store } from "./Redux/Store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const breakpoints = {
-  base: "0em",
-  sm: "30em",
-  md: "48em",
-  lg: "62em",
-  xl: "80em",
-  xxl: "90em",
+  base: "425px",
+  basemd: "375px",
+  basesm:"320px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1440px",
+  xxl: "1540px",
 };
 
 const theme = extendTheme({ breakpoints });

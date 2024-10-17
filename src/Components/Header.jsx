@@ -25,7 +25,7 @@ function Header() {
       <Box
         bgColor={"#B28B5E"}
         color={"white"}
-        display={{ xl: "grid", md: "grid", base: "none" }}
+        display={{ xl: "grid", md: "grid", base: "none", basemd: "none",basesm:"none" }}
         alignItems={{ xl: "center" }}
         gridTemplateColumns={{
           xxl: "22% 34% 20%",

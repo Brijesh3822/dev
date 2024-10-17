@@ -35,11 +35,11 @@ function Footer() {
       >
         <Box
           bgColor={"#191919"}
-          p={{ xl: "100px 300px", md: "50px 50px", base: "50px 50px" }}
+          p={{ xl: "100px 300px", md: "50px 50px", base: "50px 50px" ,basemd:"50px 50px",basesm:"50px 50px"}}
           display={"grid"}
           gridTemplateColumns={{ xl: "25% 25% 25% 25%", md: "50% 50%" }}
           gap={"40px"}
-          mt={{ xl: "0px", md: "0px", base: "auto" }}
+          mt={{ xl: "0px", md: "0px", base: "auto" ,basemd:"auto",basesm:"auto"}}
         >
           <Box>
             <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/logo/logo-light.svg" />

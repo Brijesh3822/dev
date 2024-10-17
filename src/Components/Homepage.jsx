@@ -311,11 +311,22 @@ function Homepage() {
         bgColor={"#F6F4ED"}
         display={"grid"}
         gridTemplateColumns={{ xl: "50% 50%" }}
-        p={{ md: "50px 0px", base: "40px 20px" }}
+        p={{
+          md: "50px 0px",
+          base: "40px 20px",
+          basemd: "40px 20px",
+          basesm: "40px 20px",
+        }}
       >
         <Box
           display={"grid"}
-          justifyContent={{ xl: "center", md: "center", base: "start" }}
+          justifyContent={{
+            xl: "center",
+            md: "center",
+            base: "start",
+            basemd: "start",
+            basesm: "start",
+          }}
           alignContent={"center"}
           p={{ md: " 50px 0px" }}
         >
@@ -325,7 +336,13 @@ function Homepage() {
             </Text>
           </Box>
           <Box
-            fontSize={{ xl: "80px", md: "80px", base: "50px" }}
+            fontSize={{
+              xl: "80px",
+              md: "80px",
+              base: "50px",
+              basemd: "50px ",
+              basesm: "40px ",
+            }}
             fontWeight={"bold"}
             lineHeight={"1"}
             mt={"20px"}
@@ -334,8 +351,14 @@ function Homepage() {
             <Text>Your Home</Text>
             <Text>Aesthetics</Text>
           </Box>
-          <Box 
-            w={{ xl: "450px", md: "450px", base: "auto" }}
+          <Box
+            w={{
+              xl: "450px",
+              md: "450px",
+              base: "auto",
+              basemd: "auto",
+              basesm: "300px",
+            }}
             mt={"40px"}
             color={"#636363"}
           >
@@ -387,16 +410,46 @@ function Homepage() {
           justifyContent={{ md: "center" }}
         >
           <Box
-            h={{ xl: "550px", md: "550px", base: "300px" }}
-            w={{ xl: "550px", md: "550px", base: "300px" }}
+            h={{
+              xl: "550px",
+              md: "550px",
+              base: "300px",
+              basemd: "300px",
+              basesm: "300px",
+            }}
+            w={{
+              xl: "550px",
+              md: "550px",
+              base: "300px",
+              basemd: "300px",
+              basesm: "300px",
+            }}
             bgColor={"#D3BFA6"}
             borderRadius={"50%"}
-            mt={{ xl: "0px", md: "0px", base: "40px" }}
-            ml={{ xl: "100px", md: "100px", base: "50px" }}
+            mt={{
+              xl: "0px",
+              md: "0px",
+              base: "40px",
+              basemd: "40px",
+              basesm: "60px",
+            }}
+            ml={{
+              xl: "100px",
+              md: "100px",
+              base: "50px",
+              basemd: "50px",
+              basesm: "0px",
+            }}
             position={"relative"}
           >
             <Box
-              width={{ xl: "700px", md: "550px", base: "auto" }}
+              width={{
+                xl: "700px",
+                md: "550px",
+                base: "auto",
+                basemd: "auto",
+                basesm: "auto",
+              }}
               position={"absolute"}
               top={"0"}
               bottom={"0"}
@@ -417,10 +470,24 @@ function Homepage() {
           xl: "20% 20% 20% 20%",
           md: "40% 40%",
           base: "80%",
+          basemd: "80%",
+          basesm: "80%",
         }}
         justifyContent={"center"}
-        p={{ xl: "0px 0px", md: "50px 0px", base: "70px 0px" }}
-        gap={{ xl: "0px ", md: "0px", base: "10px" }}
+        p={{
+          xl: "0px 0px",
+          md: "50px 0px",
+          base: "70px 0px",
+          basemd: "70px 0px",
+          basesm: "70px 0px",
+        }}
+        gap={{
+          xl: "0px ",
+          md: "0px",
+          base: "10px",
+          basemd: "10px",
+          basesm: "10px",
+        }}
       >
         <Box
           display={"grid"}
@@ -428,6 +495,8 @@ function Homepage() {
             xl: "20% 50%",
             md: "30% 50%",
             base: "40% 50%",
+            basemd: "40% 50%",
+            basesm: "40% 50%",
           }}
           justifyItems={"center"}
           alignItems={"center"}
@@ -447,6 +516,8 @@ function Homepage() {
             xl: "20% 50%",
             md: "30% 50%",
             base: "40% 50%",
+            basemd: "40% 50%",
+            basesm: "40% 50%",
           }}
           justifyItems={"center"}
           alignItems={"center"}
@@ -466,6 +537,8 @@ function Homepage() {
             xl: "20% 50%",
             md: "30% 60%",
             base: "40% 50%",
+            basemd: "40% 50%",
+            basesm: "40% 50%",
           }}
           justifyItems={"center"}
           alignItems={"center"}
@@ -486,6 +559,8 @@ function Homepage() {
             xl: "20% 50%",
             md: "30% 50%",
             base: "40% 50%",
+            basemd: "40% 50%",
+            basesm: "40% 50%",
           }}
           justifyItems={"center"}
           alignItems={"center"}
@@ -505,17 +580,35 @@ function Homepage() {
         h={{ xl: "500px", md: "700px" }}
         display={"grid"}
         gridTemplateColumns={{ xl: "50% 1% 50%", md: "80%" }}
-        mt={{ xl: "0px", md: "100px", base: "300px" }}
+        mt={{
+          xl: "0px",
+          md: "100px",
+          base: "300px",
+          basemd: "300px",
+          basesm: "300px",
+        }}
         justifyContent={{ xl: "center", md: "center" }}
         gap={"10px"}
       >
         <Box
           display={"grid"}
-          justifyItems={{ xl: "end", md: "end", base: "start" }}
+          justifyItems={{
+            xl: "end",
+            md: "end",
+            base: "start",
+            basemd: "start",
+            basesm: "start",
+          }}
           alignItems={"center"}
         >
           <Box
-            w={{ xl: "650px", md: "650px", base: "400px" }}
+            w={{
+              xl: "650px",
+              md: "650px",
+              base: "400px",
+              basemd: "375px",
+              basesm: "320px",
+            }}
             h={" 320px"}
             bgImage={
               "https://gramentheme.com/html/addina/assets/imgs/furniture/product/off-01.png"
@@ -556,7 +649,13 @@ function Homepage() {
         <Box display={"grid"} alignItems={"center"}>
           <Box display={"grid"} justifyItems={"start"} alignItems={"center"}>
             <Box
-              w={{ xl: "650px", md: "650px", base: "400px" }}
+              w={{
+                xl: "650px",
+                md: "650px",
+                base: "400px",
+                basemd: "375px",
+                basesm: "320px",
+              }}
               h={" 320px"}
               bgImage={
                 "https://gramentheme.com/html/addina/assets/imgs/furniture/product/off-02.png"
@@ -599,7 +698,7 @@ function Homepage() {
         h={"100px"}
         display={"grid"}
         justifyItems={"center"}
-        mt={{ md: "50px", base: "100px" }}
+        mt={{ md: "50px", base: "100px", basemd: "100px", basesm: "100px" }}
       >
         <Box>
           <Text
@@ -615,7 +714,13 @@ function Homepage() {
         <Box>
           <Text
             fontWeight={"bold"}
-            fontSize={{ xl: "60px", md: "60px", base: "40px" }}
+            fontSize={{
+              xl: "60px",
+              md: "60px",
+              base: "40px",
+              basemd: "40px",
+              basesm: "30px",
+            }}
           >
             Featured Product
           </Text>
@@ -637,7 +742,14 @@ function Homepage() {
           // display={"flex"}
           gap={"10px"}
           width={"80vw"}
-          mt={{ xl: "0px", md: "0px", base: "50px" }}
+          mt={{
+            xl: "0px",
+            md: "0px",
+            base: "50px",
+            basemd: "50px",
+            basesm: "50px",
+          }}
+          justifyContent={"center"}
         >
           {data
             .slice(current.startPoint, current.startPoint + 4)
@@ -649,6 +761,8 @@ function Homepage() {
                       xl: " 60px 40px 40px 60px",
                       md: "40px 20px 20px 90px",
                       base: "0px 10px 40px 40px",
+                      basemd: "0px 10px 40px 40px",
+                      basesm: "0px 10px 40px 40px",
                     }}
                     bgColor={"#F5F1E6"}
                     position={"relative"}
@@ -677,8 +791,20 @@ function Homepage() {
                       justifyContent={"center"}
                       gap={"10px"}
                       position={"absolute"}
-                      top={{ xl: "280", md: "240", base: "220" }}
-                      left={{ xl: "40px", md: "40px", base: "50px" }}
+                      top={{
+                        xl: "280",
+                        md: "240",
+                        base: "220",
+                        basemd: "220",
+                        basesm: "220",
+                      }}
+                      left={{
+                        xl: "40px",
+                        md: "40px",
+                        base: "30px",
+                        basemd: "30px",
+                        basesm: "20px",
+                      }}
                       right={"10px"}
                       zIndex={"-1"}
                       // border={"2px solid red"}
@@ -756,7 +882,13 @@ function Homepage() {
             h={"60px"}
             w={"60px"}
             bgColor={"white"}
-            display={{ xl: "block", md: "block", base: "none" }}
+            display={{
+              xl: "block",
+              md: "block",
+              base: "none",
+              basemd: "none",
+              basesm: "none",
+            }}
             _hover={{ bgColor: "#B28B5E", color: "white" }}
             onClick={handellLeft}
           >
@@ -772,7 +904,13 @@ function Homepage() {
             w={"60px"}
             bgColor={"white"}
             p={"20px"}
-            display={{ xl: "block", md: "block", base: "none" }}
+            display={{
+              xl: "block",
+              md: "block",
+              base: "none",
+              basemd: "none",
+              basesm: "none",
+            }}
             _hover={{ bgColor: "#B28B5E", color: "white" }}
             onClick={handelRight}
           >
@@ -784,7 +922,13 @@ function Homepage() {
       <Box
         display={"grid"}
         gridTemplateColumns={{ xl: " 50% 50%", md: "100%" }}
-        h={{ xl: "600px", md: "600px", base: "900px" }}
+        h={{
+          xl: "600px",
+          md: "600px",
+          base: "900px",
+          basemd: "900px",
+          basesm: "900px",
+        }}
         mt={{ xl: "0px", md: "300px" }}
         gap={{ md: "10px" }}
       >
@@ -796,9 +940,21 @@ function Homepage() {
         >
           <Box
             w={{ xl: "500px", md: "600px" }}
-            mr={{ xl: "100px", md: "100px", base: "25px" }}
+            mr={{
+              xl: "100px",
+              md: "100px",
+              base: "25px",
+              basemd: "25px",
+              basesm: "0px",
+            }}
             bgColor={"#B28B5E"}
-            p={"20px"}
+            p={{
+              xl: "20px",
+              md: "20px",
+              base: "0px",
+              basemd: "0px",
+              basesm: "0px",
+            }}
           >
             <Box h={"340px"} p={"40px"}>
               <Text fontSize={"20px"} fontWeight={"bold"} color={"white"}>
@@ -833,7 +989,13 @@ function Homepage() {
           display={"grid"}
           justifyItems={"center"}
           alignItems={"end"}
-          h={{ xl: "auto", md: "470px", base: "400px" }}
+          h={{
+            xl: "auto",
+            md: "470px",
+            base: "400px",
+            basemd: "400px",
+            basesm: "400px",
+          }}
         >
           <Box
             w={"240px"}
@@ -871,11 +1033,13 @@ function Homepage() {
           xl: "100px 200px",
           md: "50px 100px",
           base: "25px 0px",
+          basemd: "25px 0px",
+          basesm: "1  0px 0px",
         }}
         mt={{ xl: "0px", md: "300px" }}
       >
         <Box>
-          <Box w={"120px"} textAlign={"center"} bgColor={"#F3EEE7"}>
+          <Box w={"120px"} textAlign={"center"} bgColor={"#F3EEE7"} ml={"55px"}>
             <Text fontWeight={"bold"} color={"#B38B5E "}>
               THIS MONTH
             </Text>
@@ -883,11 +1047,27 @@ function Homepage() {
 
           <Box
             display={"flex"}
-            flexDirection={{ xl: "row", md: "row", base: "column" }}
+            flexDirection={{
+              xl: "row",
+              md: "row",
+              base: "column",
+              basemd: "column",
+              basesm: "column",
+            }}
             justifyContent={"space-between"}
+            ml={"55px"}
           >
             <Box>
-              <Text fontSize={"60px"} fontWeight={"bold"}>
+              <Text
+                fontSize={{
+                  xl: "60px",
+                  md: "60px",
+                  base: "60px",
+                  basemd: "60px",
+                  basesm: "40px",
+                }}
+                fontWeight={"bold"}
+              >
                 Trendy Collection
               </Text>
             </Box>
@@ -963,6 +1143,8 @@ function Homepage() {
                         xl: "40px 40px 40px 60px",
                         md: " 40px 20px 40px 20px",
                         base: " 10px 20px 55px 20px",
+                        basemd: "10px 20px 55px 20px",
+                        basesm: "10px 20px 55px 20px",
                       }}
                       bgColor={"#F5F1E6"}
                       position={"relative"}
@@ -992,7 +1174,13 @@ function Homepage() {
                         justifyContent={"center"}
                         gap={"10px"}
                         position={"absolute"}
-                        top={{ xl: "260", md: "260", base: "240" }}
+                        top={{
+                          xl: "260",
+                          md: "260",
+                          base: "240",
+                          basemd: "240",
+                          basesm: "240",
+                        }}
                         left={{ xl: "60px", md: "0px" }}
                         // right={"0"}
                         zIndex={"-1"}
@@ -1072,9 +1260,17 @@ function Homepage() {
             xl: "40px 100px",
             md: "20px 0px",
             base: "40px 0px",
+            basemd: "40px 0px",
+            basesm: "40px 0px",
           }}
           display={"grid"}
-          gridTemplateColumns={{ xl: "57% 40%", md: "100%", base: "100%" }}
+          gridTemplateColumns={{
+            xl: "57% 40%",
+            md: "100%",
+            base: "100%",
+            basemd: "100%",
+            basesm: "100%",
+          }}
           gap={"40px"}
         >
           <Box
@@ -1082,7 +1278,14 @@ function Homepage() {
               "https://gramentheme.com/html/addina/assets/imgs/furniture/ad/ad-discount.png"
             }
             bgRepeat={"no-repeat"}
-            p={{ xxl: "40px", xl: "20px", md: "20px", base: "30px" }}
+            p={{
+              xxl: "40px",
+              xl: "20px",
+              md: "20px",
+              base: "30px",
+              basemd: "30px",
+              basesm: "30px",
+            }}
           >
             <Box
               border={"2px solid white"}
@@ -1091,6 +1294,7 @@ function Homepage() {
                 xl: "80px 40px",
                 md: "80px 40px",
                 base: "40px 40px",
+                basemd: "40px 40px",
               }}
               color={"white"}
             >
@@ -1135,7 +1339,13 @@ function Homepage() {
                 HOT DEAL fURNITURE
               </Text>
               <Text
-                fontSize={{ xl: "40px", md: "40px", base: "30px" }}
+                fontSize={{
+                  xl: "40px",
+                  md: "40px",
+                  base: "30px",
+                  basemd: "30px",
+                  basesm: "20px",
+                }}
                 fontWeight={"bold"}
                 color={"white"}
               >
@@ -1147,23 +1357,51 @@ function Homepage() {
                   xl: "20% 20% 20% 20%",
                   md: "20% 20% 20% 20%",
                   base: " 40% 40%",
+                  basemd: "40% 40%",
+                  basesm: "40% 40%",
                 }}
-                gap={{ xxl: "20px", xl: "30px", md: "30px", base: "30px" }}
+                gap={{
+                  xxl: "20px",
+                  xl: "30px",
+                  md: "30px",
+                  base: "30px",
+                  basemd: "30px",
+                  basesm: "30px",
+                }}
                 justifyContent={"center"}
-                w={{ xl: "400px", md: "400px", base: "a" }}
+                w={{
+                  xl: "400px",
+                  md: "400px",
+                  base: "a",
+                  basemd: "a",
+                  basesm: "a",
+                }}
               >
                 <Box
                   display={"grid"}
                   alignItems={"center"}
                   textAlign={"center"}
                   bgColor={"#4D737D"}
-                  w={{ xxl: "80px", xl: "100px", md: "100px", base: "100px" }}
+                  w={{
+                    xxl: "80px",
+                    xl: "100px",
+                    md: "100px",
+                    base: "100px",
+                    basemd: "100px",
+                    basesm: "100px",
+                  }}
                 >
                   <Box fontSize={"40px"} fontWeight={"bold"} color={"white"}>
                     99
                   </Box>
                   <Box
-                    fontSize={{ xl: "20px", md: "20px", base: "15px" }}
+                    fontSize={{
+                      xl: "20px",
+                      md: "20px",
+                      base: "15px",
+                      basemd: "15px",
+                      basesm: "15px",
+                    }}
                     fontWeight={"bold"}
                     color={"white"}
                   >
@@ -1176,13 +1414,26 @@ function Homepage() {
                   alignItems={"center"}
                   textAlign={"center"}
                   bgColor={"#4D737D"}
-                  w={{ xxl: "80px", xl: "100px", md: "100px", base: "100px" }}
+                  w={{
+                    xxl: "80px",
+                    xl: "100px",
+                    md: "100px",
+                    base: "100px",
+                    basemd: "100px",
+                    basesm: "100px",
+                  }}
                 >
                   <Box fontSize={"40px"} fontWeight={"bold"} color={"white"}>
                     12
                   </Box>
                   <Box
-                    fontSize={{ xl: "20px", md: "20px", base: "15px" }}
+                    fontSize={{
+                      xl: "20px",
+                      md: "20px",
+                      base: "15px",
+                      basemd: "15px",
+                      basesm: "15px",
+                    }}
                     fontWeight={"bold"}
                     color={"white"}
                   >
@@ -1195,13 +1446,26 @@ function Homepage() {
                   alignItems={"center"}
                   textAlign={"center"}
                   bgColor={"#4D737D"}
-                  w={{ xxl: "80px", xl: "100px", md: "100px", base: "100px" }}
+                  w={{
+                    xxl: "80px",
+                    xl: "100px",
+                    md: "100px",
+                    base: "100px",
+                    basemd: "100px",
+                    basesm: "100px",
+                  }}
                 >
                   <Box fontSize={"40px"} fontWeight={"bold"} color={"white"}>
                     54
                   </Box>
                   <Box
-                    fontSize={{ xl: "20px", md: "20px", base: "15px" }}
+                    fontSize={{
+                      xl: "20px",
+                      md: "20px",
+                      base: "15px",
+                      basemd: "15px",
+                      basesm: "15px",
+                    }}
                     fontWeight={"bold"}
                     color={"white"}
                   >
@@ -1214,7 +1478,14 @@ function Homepage() {
                   alignItems={"center"}
                   textAlign={"center"}
                   bgColor={"#4D737D"}
-                  w={{ xxl: "80px", xl: "100px", md: "100px", base: "100px" }}
+                  w={{
+                    xxl: "80px",
+                    xl: "100px",
+                    md: "100px",
+                    base: "100px",
+                    basemd: "100px",
+                    basesm: "100px",
+                  }}
                 >
                   <Box fontSize={"40px"} fontWeight={"bold"} color={"white"}>
                     59
@@ -1247,7 +1518,13 @@ function Homepage() {
         bgImage={
           "https://gramentheme.com/html/addina/assets/imgs/furniture/testimonial/bg.jpg"
         }
-        p={{ xl: "140px 0px", md: "140px 0px", base: "20px 0px" }}
+        p={{
+          xl: "140px 0px",
+          md: "140px 0px",
+          base: "20px 0px",
+          basemd: "20px 0px",
+          basesm: "20px 0px",
+        }}
         display={"grid"}
         justifyItems={"center"}
         alignContent={"center"}
@@ -1265,7 +1542,13 @@ function Homepage() {
         </Box>
         <Box>
           <Text
-            fontSize={{ xl: "60px", md: "60px", base: "40px" }}
+            fontSize={{
+              xl: "60px",
+              md: "60px",
+              base: "40px",
+              basemd: "40px",
+              basesm: "40px",
+            }}
             fontWeight={"bold"}
             color={"white"}
           >
@@ -1312,7 +1595,15 @@ function Homepage() {
         <Box></Box>
       </Box>
 
-      <Box p={{ xl: "120px 300px", md: "120px 50px", base: "50px 0px" }}>
+      <Box
+        p={{
+          xl: "120px 300px",
+          md: "120px 50px",
+          base: "50px 0px",
+          basemd: "50px 0px",
+          basesm: "50px 0px",
+        }}
+      >
         <Box w={"120px"} textAlign={"center"} bgColor={"#F3EEE7"}>
           <Text fontWeight={"bold"} color={"#B28B5E"}>
             THIS WEEK
@@ -1328,7 +1619,13 @@ function Homepage() {
           display={"grid"}
           mt={"20px"}
           gridTemplateColumns={{ xl: "30% 30% 30%", md: "45% 45%" }}
-          gap={{ xl: "40px", md: "40px", base: "20px" }}
+          gap={{
+            xl: "40px",
+            md: "40px",
+            base: "20px",
+            basemd: "20px",
+            basesm: "20px",
+          }}
         >
           {bestseller.map((data) => {
             return (
@@ -1338,6 +1635,8 @@ function Homepage() {
                   xl: "45% 45%",
                   md: "48% 49%",
                   base: "45% 49%",
+                  basemd: "45% 49%",
+                  basesm: "45% 49%",
                 }}
                 gap={"20px"}
               >
@@ -1375,9 +1674,21 @@ function Homepage() {
       </Box>
 
       <Box
-        p={{ xl: "100px 0px", md: "100px 0px", base: "50px 0px" }}
+        p={{
+          xl: "100px 0px",
+          md: "100px 0px",
+          base: "50px 0px",
+          basemd: "50px 0px",
+          basesm: "50px 0px",
+        }}
         display={"grid"}
-        justifyItems={{ xl: "center", md: "center", base: "center" }}
+        justifyItems={{
+          xl: "center",
+          md: "center",
+          base: "center",
+          basemd: "50px 0px",
+          basesm: "50px 0px",
+        }}
         alignContent={"center"}
         bgColor={"#f5f1e6"}
       >
@@ -1399,9 +1710,21 @@ function Homepage() {
           mt={"10px"}
         >
           <Box
-            w={{ xl: "600px", md: "600px", base: "auto" }}
+            w={{
+              xl: "600px",
+              md: "600px",
+              base: "auto",
+              basemd: "auto",
+              basesm: "auto",
+            }}
             display={"grid"}
-            gridTemplateColumns={{ xl: "50% 50%", md: "50% 50%", base: "100%" }}
+            gridTemplateColumns={{
+              xl: "50% 50%",
+              md: "50% 50%",
+              base: "100%",
+              basemd: "100%",
+              basesm: "100%",
+            }}
             bgColor={"white"}
           >
             <Box p={"40px"}>
@@ -1447,18 +1770,34 @@ function Homepage() {
                 <FaChevronRight />
               </Button>
             </Box>
-            <Box p={{ xl: "20px", md: "20px", base: "40px" }}>
+            <Box
+              p={{
+                xl: "20px",
+                md: "20px",
+                base: "40px",
+                basemd: "40px",
+                basesm: "40px",
+              }}
+            >
               <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/blog/blog-image1.jpg" />
             </Box>
           </Box>
 
           <Box
-            w={{ xl: "600px", md: "600px", base: "auto" }}
+            w={{
+              xl: "600px",
+              md: "600px",
+              base: "auto",
+              basemd: "auto",
+              basesm: "auto",
+            }}
             display={"grid"}
             gridTemplateColumns={{
               xl: "50% 50%",
               md: "50% 50%",
               base: " 100%",
+              basemd: "100%",
+              basesm: "100%",
             }}
             bgColor={"white"}
           >
@@ -1505,14 +1844,31 @@ function Homepage() {
                 <FaChevronRight />
               </Button>
             </Box>
-            <Box p={{ xl: "20px", md: "20px", base: "40px" }}>
+            <Box
+              p={{
+                xl: "20px",
+                md: "20px",
+                base: "40px",
+                basemd: "40px",
+                basesm: "40px",
+              }}
+            >
               <Image src="https://gramentheme.com/html/addina/assets/imgs/furniture/blog/blog-image2.jpg" />
             </Box>
           </Box>
         </Box>
       </Box>
 
-      <Box h={{xl:"600px",md:"auto",base:"auto"}} p={{ xl: "100px 200px", md: "50px 20px" }}>
+      <Box
+        h={{
+          xl: "600px",
+          md: "auto",
+          base: "auto",
+          basemd: "auto",
+          basesm: "auto",
+        }}
+        p={{ xl: "100px 200px", md: "50px 20px" }}
+      >
         <Box
           display={"grid"}
           gridTemplateColumns={{ xl: "30% 30% 30%", md: "45% 45%" }}
@@ -1593,7 +1949,13 @@ function Homepage() {
         <Box
           display={"grid"}
           gridTemplateColumns={{ xl: "20% 20% 20% 20% 20%", md: "30% 30% 30%" }}
-          mt={"40px"}
+          mt={{
+            xl: "40px",
+            md: "40px",
+            base: "0px",
+            basemd: "0px",
+            basesm: "0px",
+          }}
           alignItems={"center"}
           justifyItems={"center"}
         >
@@ -1605,7 +1967,7 @@ function Homepage() {
         </Box>
       </Box>
 
-        <Footer/>
+      <Footer />
     </div>
   );
 }

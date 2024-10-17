@@ -56,7 +56,13 @@ function Signin() {
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"center"}
-        p={{ xl: "50px 400px", md: "10px 10px", base: "10px 10px" }}
+        p={{
+          xl: "50px 400px",
+          md: "10px 10px",
+          base: "10px 10px",
+          basemd: "10px 10px",
+          basesm:"10px 10px",
+        }}
       >
         <Box boxShadow="lg" p="" rounded="md" bg="white">
           <Box display={"grid"} justifyContent={"center"}>
@@ -66,9 +72,15 @@ function Signin() {
           </Box>
           <Box
             display={"grid"}
-            gridTemplateColumns={{ xl: "50% 50%", md: "50% 50%", base: "100%" }}
+            gridTemplateColumns={{
+              xl: "50% 50%",
+              md: "50% 50%",
+              base: "100%",
+              basemd: "100%",
+              basesm:"100%",
+            }}
           >
-            <Box display={"grid"} gap={"20px"} p={"40px"}>
+            <Box display={"grid"} gap={"20px"} p={{xl:"40px",md:"40px",base:"40px",basemd:"40px",basesm:"0px"}}>
               <Box display={"grid"}>
                 <Text fontSize={"20px"}>Enter Your Email </Text>
                 <Input
@@ -110,7 +122,13 @@ function Signin() {
               </Box>
               <Box
                 display={"flex"}
-                flexDirection={{ xl: "row", md: "row", base: "column" }}
+                flexDirection={{
+                  xl: "row",
+                  md: "row",
+                  base: "column",
+                  basemd: "column",
+                  basesm:"column",
+                }}
                 alignItems={"center"}
               >
                 <Button
